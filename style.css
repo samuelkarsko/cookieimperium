@@ -1,0 +1,146 @@
+*{
+	padding: 0vw;
+	margin: 0px;
+}
+#console{
+	background-color: brown;
+	padding: 1vw;
+	margin: .5vw;
+}
+
+#realbody{
+padding: .5vw;
+margin: .5vw;
+}
+
+@font-face{
+	 font-family: font1;
+    src: url(font1.ttf);
+}
+
+h1{
+	color: white;
+	font-family: font1;
+	font-size: 2vw;
+	display: inline;
+}
+
+h2{
+	color: yellow;
+	font-family: font1;
+	font-size: 2vw;
+	display: inline;
+	float: right;
+}
+
+p, h3{
+	display: inline;
+	font-size: 1.5vw;
+}
+
+input{
+	font-size: 1.5vw;
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+}
+th, td {
+    padding: .3vw;
+    text-align: left;
+}
+
+
+
+
+.filler{
+	visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: grey;
+    color: #fff;
+    font-family: font1;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
