@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 
 var cookies = 0;
@@ -14,7 +15,7 @@ var oldsold = 0;
 var unsold = 0;
 var newsold = 0;
 var originalspeed = 300;
-var sellspeed = 0;
+var sellspeed = 0
 var quanterone = false;
 var quantertwo = false;
 var givensellspeed = 300;
@@ -24,13 +25,40 @@ var pop = 1;
 var multiply = 0;
 var buyspeed = 300;
 var soldpersec = 0;
+var totalcapacity = 5;
+var fullcapacity = 0;
+var employees = 0;
+var manager = 0;
 //roundings
 //real functions
 
+
+//event listener
 $("#makecookie").click(function() {
-	cookies++;
+  cookies++;
 });
 
+
+$("#buyoffice1").click(function(){
+  if (money >= 250) {
+      money -= 250;
+      buildgui(1);
+   }
+});
+
+$("#buyemployees").click(function(){
+  if (fullcapacity < totalcapacity) {
+      employees++;
+	  fullcapacity++;
+   }
+});
+
+$("#buymanager").click(function(){
+  if ((fullcapacity + 5) <= totalcapacity) {
+      manager ++;
+	  fullcapacity += 5;
+   }
+});
 
 //average Cookies per second
 setInterval(function(){
@@ -49,7 +77,7 @@ $("#soldpersec").html(newsold);
 
 //raise or lower cookieprice
 $("#raiseprice").click(function() {
-if (price <= 5) {	
+if (price <= 5) { 
 price = parseFloat(price);
 price += 0.01;
 $("#price").html(price);
@@ -69,64 +97,64 @@ function timeoutsell() {
     setTimeout(function () {
       if (unsold > 0) {
       if (quanterone) {
-      		sold += 11;
-      		money += (price * 11);
+          sold += 11;
+          money += (price * 11);
       }else if (quantertwo ) {
-      		sold += 111;
-      		money += (price * 111);
+          sold += 111;
+          money += (price * 111);
       }{
-      		sold++;
-      		money += price;
-      	}
-      		
+          sold++;
+          money += price;
+        }
+          
 
 
 
-      		//sellspeed (under 0.5$)
-      		if (price > 0.5) {
-      			tester = 0;
-      			b = (price - 0.5) * 100;
-      			for (i = 0; i <= b; i++) {
-      				if (tester == 0) {
-      					givensellspeed = originalspeed * 1.02;
-      						tester = 1;
-      			}else{
-      				givensellspeed = givensellspeed * 1.02;
-      				}
-      			}
-      		}
+          //sellspeed (under 0.5$)
+          if (price > 0.5) {
+            tester = 0;
+            b = (price - 0.5) * 100;
+            for (i = 0; i <= b; i++) {
+              if (tester == 0) {
+                givensellspeed = originalspeed * 1.02;
+                  tester = 1;
+            }else{
+              givensellspeed = givensellspeed * 1.02;
+              }
+            }
+          }
 
 
-      		
-      		//sellspeed (under 0.5$)
+          
+          //sellspeed (under 0.5$)
 
-      		if (price < 0.5) {
-      			tester = 0;
-      			b = (0.5 - price) * 100;
-      			for (i = 0; i <= b; i++) {
-      				if (tester == 0) {
-      					givensellspeed = originalspeed / 1.1;
-      						tester = 1;
-      			}else{
-      				givensellspeed = givensellspeed / 1.1;
-      				}
-      			}
-      		}
+          if (price < 0.5) {
+            tester = 0;
+            b = (0.5 - price) * 100;
+            for (i = 0; i <= b; i++) {
+              if (tester == 0) {
+                givensellspeed = originalspeed / 1.1;
+                  tester = 1;
+            }else{
+              givensellspeed = givensellspeed / 1.1;
+              }
+            }
+          }
 
-	
+  
 
 
 
-			var min = 1;
-			var max = 10;
-			var x = Math.floor(Math.random() * (max - min)) + min;
-			var y = parseFloat((givensellspeed * 5) / x);
-			sellspeed = y;
+      var min = 1;
+      var max = 10;
+      var x = Math.floor(Math.random() * (max - min)) + min;
+      var y = parseFloat((givensellspeed * 5) / x);
+      sellspeed = y;
 
-			//Popularity
-			pop = popularity / 100;
-			sellspeed = sellspeed / pop;	
-		}	
+      //Popularity
+      pop = popularity / 100;
+      sellspeed = sellspeed / pop;  
+    } 
         
         timeoutsell();
     }, sellspeed);
@@ -134,29 +162,29 @@ function timeoutsell() {
 
 //buy robots
 $("#buyrobots").click(function() {
-	if (money >= robotprice) {
-		robots++;
-		money -= robotprice;
-		robotprice = (robotprice * 1.25).toFixed(2);
-		multiply++;
+  if (money >= robotprice) {
+    robots++;
+    money -= robotprice;
+    robotprice = (robotprice * 1.25).toFixed(2);
+    multiply++;
 
-	}
+  }
 });
 
 
 //Auto-Cookie-Process
 setInterval(function() {
-	if (multiply > 0) {
-	z = false;
-	for (var i = 0; i < multiply; i++) {
-		if (z == false) {
-			z = true;
-			cookiespeed = 1000 / 1.5;
-			}else{
-			cookiespeed /= 1.5;
-			}	
-		}
-	}
+  if (multiply > 0) {
+  z = false;
+  for (var i = 0; i < multiply; i++) {
+    if (z == false) {
+      z = true;
+      cookiespeed = 1000 / 1.5;
+      }else{
+      cookiespeed /= 1.5;
+      } 
+    }
+  }
 }, 50);
 
 
@@ -164,10 +192,10 @@ timeoutbuy();
 
 function timeoutbuy() {
     setTimeout(function () {
-    		if (multiply > 0) {
-  			cookies++;
-  			}
-  			timeoutbuy();
+        if (multiply > 0) {
+        cookies++;
+        }
+        timeoutbuy();
     }, cookiespeed);
 }
 
@@ -175,8 +203,25 @@ function timeoutbuy() {
 
 
 
+
+
+
+//function, that builds the gui's with the ID-nums
+function buildgui(num){
+  if (num == 1) {
+    $("#buyoffice1").remove();
+	$("#remove1").remove();
+  }
+}
+
+
+
 //intervalls
 setInterval(function(){ $("#popularity").html(popularity); }, 500);
+setInterval(function(){ $("#employees").html(employees); }, 50);
+setInterval(function(){ $("#manager").html(manager); }, 50);
+setInterval(function(){ $("#fullcapacity").html(fullcapacity); }, 50);
+setInterval(function(){ $("#totalcapacity").html(totalcapacity); }, 50);	
 setInterval(function(){ $("#speed").html(newcookies); }, 500);
 setInterval(function(){ $("#totalcookies").html(cookies); }, 5);
 setInterval(function(){ $("#robots").html(robots); }, 50);
@@ -184,8 +229,8 @@ setInterval(function(){ $("#robotprice").html(robotprice); }, 50);
 setInterval(function(){ $("#money").html(money.toFixed(2)); }, 50);
 setInterval(function(){ $("#price").html(price.toFixed(2)); }, 50);
 setInterval(function(){ 
-	unsold = cookies - sold;
-	$("#unsold").html(unsold); }, 50);
+  unsold = cookies - sold;
+  $("#unsold").html(unsold); }, 50);
 
 
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cookie Imperium</title>
+    <title>Cookie Imperium</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -18,8 +18,8 @@
 
 
 <div id="console">
-	<h1>Cookie Imperium</h1>
-	<h2>Total Cookies: <span id="totalcookies"></span></h2>
+    <h1>Cookie Imperium</h1>
+    <h2>Total Cookies: <span id="totalcookies"></span></h2>
 </div>
 <div id="realbody">
 
@@ -44,7 +44,7 @@
 
 <tr> 
 <th><h3 style="text-decoration: underline;">Simple Analyzes</h3></th>   
-<th></th>
+<th><h3 style="text-decoration: underline;">Garage-Office</h3></th>
 <th></th>
 <th></th>
 <th></th>
@@ -52,7 +52,7 @@
 
 <tr>    
     <th><h3><div class="tooltip">Funds:&nbsp;<span class="tooltiptext">You need money to develop new technologies or finance new projects.</span></div><p><span id="money"></span> $</p></h3></th>
-    <th></th>
+    <th><h3>Employees: <span id="employees"></span></h3></th>
     <th></th>
     <th></th>
     <th></th>
@@ -63,7 +63,8 @@
 
 <tr>    
 <th><h3><div class="tooltip">Produce Speed: <span class="tooltiptext">You can increase your produce speed by buying some Cookie-robots!</span></div> <p><span id="speed"></span> C. p/s.</p></h3></th>
-<th></th>
+</th> 
+<th><h3>Manager: <span id="manager"></span></h3></th>
 <th></th>
 <th></th>
 <th></th>
@@ -73,7 +74,7 @@
 <tr>    
 <th><h3><div class="tooltip">Sold: <span class="tooltiptext">You can increase your sells per sec. when you have more popularity!</span></div> <p><span id="soldpersec"></span> C. p/s.</p></h3>
 </th>
-<th></th>
+<th><h3>Capacity:&nbsp;&nbsp;<span id="fullcapacity"></span> / <span id="totalcapacity"></span></h3>
 <th></th>
 <th></th>
 <th></th>
@@ -83,7 +84,7 @@
 <tr>    <h3>
 <th><h3><div class="tooltip">  Popularity: <span class="tooltiptext">Increase your popularity with doing some projects!</span></div>
 <p><span id="popularity"></span>%</p></h3></th>  
-<th></th>
+<th><h3><input type="button" value="Contract Employees (1Ca)" id="buyemployees"></h3></th>
 <th></th>
 <th></th>
 <th></th>
@@ -92,7 +93,7 @@
 
 <tr>    
 <th><!--brake--><br></th>
-<th></th>
+<th><h3><input type="button" value="Contract Manager (5Ca)" id="buymanager"></h3></th>
 <th></th>
 <th></th>
 <th></th>
@@ -177,7 +178,7 @@
 
 
 <tr>   
-<th><input type="button" id="buyoffice1" value="Build Office"><h3></span>250$</h3></th>
+<th><input type="button" id="buyoffice1" value="Build Office"><h3 id="remove1"></span>250$</h3></th>
 <th></th>
 <th></th>
 <th></th>
