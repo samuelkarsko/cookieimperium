@@ -5,7 +5,9 @@
 #console{
 	background-color: brown;
 	padding: 1vw;
-	margin: .5vw;
+	margin: .5vw
+    transition: 3s;
+    -webkit-transition: 5s;
 }
 
 #realbody{
@@ -26,7 +28,7 @@ h1{
 }
 
 h2{
-	color: yellow;
+	color: white;
 	font-family: font1;
 	font-size: 2vw;
 	display: inline;
@@ -59,13 +61,34 @@ th, td {
 }
 
 
+.projects{
+    font-size: 1vw;
+    border: .1vw groove black;
+    border-radius: .3vw;
+    height: 5.8vw;
+    width: 21vw;
+    text-align: center;
+    transition: .3s;
+}
+
+.projects:hover{
+    font-size: 1.02vw;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+ }
 
 
+h4{
+    font-size: 1.3vw;
+}
 
 
-
-
-
+.star{
+    width: 1vw;
+    opacity: 0;
+      transition: opacity 1s ease-in-out;
+}
 
 
 
