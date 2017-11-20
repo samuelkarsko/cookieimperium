@@ -1,4 +1,5 @@
 
+$(document).ready(function() {
 
 var cookies = 0;
 var oldcookies = 0.00;
@@ -28,14 +29,6 @@ var totalcapacity = 5;
 var fullcapacity = 0;
 var employees = 0;
 var manager = 0;
-var availableemployees = 0;
-var days = 0;
-var hours = 12;
-var totalseconds = 0;
-var weeks = 0;
-
-var publicityprojects = {slot1:"1", slot2:"2", slot3:"3"};
-
 //roundings
 //real functions
 
@@ -56,7 +49,6 @@ $("#buyoffice1").click(function(){
 $("#buyemployees").click(function(){
   if (fullcapacity < totalcapacity) {
       employees++;
-      availableemployees++;
 	  fullcapacity++;
    }
 });
@@ -208,10 +200,7 @@ function timeoutbuy() {
 }
 
 
-$(".projects").click(function() {
 
-
-});
 
 
 
@@ -227,13 +216,7 @@ function buildgui(num){
 
 
 
-
-
 //intervalls
-setInterval(function(){ $("#weeks").html(weeks); }, 50);
-setInterval(function(){ $("#days").html(days); }, 50);
-setInterval(function(){ $("#hours").html(hours); }, 50);
-setInterval(function(){ $("#availableemployees").html(availableemployees); }, 50);
 setInterval(function(){ $("#popularity").html(popularity); }, 500);
 setInterval(function(){ $("#employees").html(employees); }, 50);
 setInterval(function(){ $("#manager").html(manager); }, 50);
@@ -249,39 +232,6 @@ setInterval(function(){
   unsold = cookies - sold;
   $("#unsold").html(unsold); }, 50);
 
-
-//time-system
-setInterval(function(){ 
-  hours++;
-  totalseconds++;
-  if (hours > 23) {
-    hours = 0;
-    days++;
-  }
-  if (days > 7) {
-    days = 0;
-    weeks++;
-  }
-
-  //time change
-  if (hours == 20) {
-    $("#console").css("background-color", "#350606");
-  }
-  if (hours == 6) {
-     $(".star").css("opacity", "0");
-    $("#console").css("background-color", "#c6be21");
-  }
-if (hours == 12) {
-    $("#console").css("background-color", "#5dc620");
-  }
-
- if (hours == 18) {
-    $("#console").css("background-color", "#772809");
-  }
-if (hours == 21) {
-   $(".star").css("opacity", "1");
-}
- }, 1000);
 
 
 
@@ -312,3 +262,4 @@ window.onclick = function(event) {
 
 
 //the final end
+});
