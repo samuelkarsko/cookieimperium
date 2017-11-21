@@ -1,6 +1,3 @@
-
-$(document).ready(function() {
-
 var cookies = 0;
 var oldcookies = 0.00;
 var cookiespeed = 50;
@@ -32,33 +29,14 @@ var manager = 0;
 //roundings
 //real functions
 
-
-//event listener
-$("#makecookie").click(function() {
-  cookies++;
-});
+//this script uses only elementary functions (they have to be in the main file)
 
 
-$("#buyoffice1").click(function(){
-  if (money >= 250) {
-      money -= 250;
-      buildgui(1);
-   }
-});
+$(document).ready(function() {
+console.log("script.js - ready");
 
-$("#buyemployees").click(function(){
-  if (fullcapacity < totalcapacity) {
-      employees++;
-	  fullcapacity++;
-   }
-});
 
-$("#buymanager").click(function(){
-  if ((fullcapacity + 5) <= totalcapacity) {
-      manager ++;
-	  fullcapacity += 5;
-   }
-});
+
 
 //average Cookies per second
 setInterval(function(){
@@ -73,22 +51,6 @@ newsold = sold - oldsold;
 oldsold = sold;
 $("#soldpersec").html(newsold);
  }, 1000);
-
-
-//raise or lower cookieprice
-$("#raiseprice").click(function() {
-if (price <= 5) { 
-price = parseFloat(price);
-price += 0.01;
-$("#price").html(price);
-}});
-//raise or lower cookieprice
-$("#lowerprice").click(function() {
-if (price > .01) {
-price = parseFloat(price);
-price -= 0.01;
-$("#price").html(price);
-}});
 
 
 timeoutsell();
@@ -108,9 +70,7 @@ function timeoutsell() {
         }
           
 
-
-
-          //sellspeed (under 0.5$)
+             //sellspeed (under 0.5$)
           if (price > 0.5) {
             tester = 0;
             b = (price - 0.5) * 100;
@@ -160,17 +120,6 @@ function timeoutsell() {
     }, sellspeed);
 }
 
-//buy robots
-$("#buyrobots").click(function() {
-  if (money >= robotprice) {
-    robots++;
-    money -= robotprice;
-    robotprice = (robotprice * 1.25).toFixed(2);
-    multiply++;
-
-  }
-});
-
 
 //Auto-Cookie-Process
 setInterval(function() {
@@ -201,36 +150,6 @@ function timeoutbuy() {
 
 
 
-
-
-
-
-
-//function, that builds the gui's with the ID-nums
-function buildgui(num){
-  if (num == 1) {
-    $("#buyoffice1").remove();
-	$("#remove1").remove();
-  }
-}
-
-
-
-//intervalls
-setInterval(function(){ $("#popularity").html(popularity); }, 500);
-setInterval(function(){ $("#employees").html(employees); }, 50);
-setInterval(function(){ $("#manager").html(manager); }, 50);
-setInterval(function(){ $("#fullcapacity").html(fullcapacity); }, 50);
-setInterval(function(){ $("#totalcapacity").html(totalcapacity); }, 50);	
-setInterval(function(){ $("#speed").html(newcookies); }, 500);
-setInterval(function(){ $("#totalcookies").html(cookies); }, 5);
-setInterval(function(){ $("#robots").html(robots); }, 50);
-setInterval(function(){ $("#robotprice").html(robotprice); }, 50);
-setInterval(function(){ $("#money").html(money.toFixed(2)); }, 50);
-setInterval(function(){ $("#price").html(price.toFixed(2)); }, 50);
-setInterval(function(){ 
-  unsold = cookies - sold;
-  $("#unsold").html(unsold); }, 50);
 
 
 
