@@ -1,13 +1,14 @@
-$(document).ready(function() {
-console.log("engine/upgrades.js - ready");
+
+
 //function, that builds the gui's with the ID-nums
 
 
 
-function buildgui(num){
+ function buildgui(num){
   if (num == 1) {
-    $("#buyoffice1").remove();
-	$("#remove1").remove();
+  $("#buyoffice1").remove();
+  $("#remove1").remove();
+  $("#garageTitle").css("visibility","visible");
   }
 }
 
@@ -16,5 +17,3 @@ function buildgui(num){
 
 
 
-
-});

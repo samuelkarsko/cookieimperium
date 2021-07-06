@@ -4,11 +4,12 @@
     <title>Cookie Imperium</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="engine/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="engine/intervals.js"></script>
-    <script type="text/javascript" src="engine/upgrades.js"></script>
     <script type="text/javascript" src="engine/listener.js"></script>
+    <script type="text/javascript" src="engine/upgrades.js"></script>
+    
 
 </head>
 <body>
@@ -51,7 +52,7 @@
 
 <tr> 
 <th><h3 style="text-decoration: underline;">Simple Analyzes</h3></th>   
-<th><h3 style="text-decoration: underline;">Garage-Office</h3></th>
+<th><h3 id="garageTitle" style="text-decoration: underline; visibility: hidden;">Garage-Office</h3></th>
 <th></th>
 <th></th>
 <th></th>
@@ -69,7 +70,7 @@
 
 
 <tr>    
-<th><h3><div class="tooltip">Produce Speed: <span class="tooltiptext">You can increase your produce speed by buying some Cookie-robots!</span></div> <p><span id="speed"></span> C. p/s.</p></h3></th>
+<th><h3><div class="tooltip">Produce Speed: <span class="tooltiptext">You can increase your produce speed by buying some Cookie-Robots!</span></div> <p><span id="speed"></span> C. p/s.</p></h3></th>
 </th> 
 <th><h3>Manager: <span id="manager"></span></h3></th>
 <th></th>
